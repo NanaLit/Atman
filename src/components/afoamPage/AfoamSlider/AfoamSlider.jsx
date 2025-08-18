@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Scrollbar, A11y, Pagination } from 'swiper/modules';
@@ -6,12 +7,33 @@ import 'swiper/css/pagination';
 import styles from './AfoamSlider.module.scss';
 
 export default function AfoamSlider() {
+	const paginationRef = useRef(null);
+	const onSlideChangeHandler = (swiper) => {
+		const even = swiper.realIndex % 2 === 0;
+		const bullets = paginationRef.current.querySelectorAll(".bullet")
+		
+		if (paginationRef.current) {
+			if (even) {
+				bullets.forEach(bullet => {
+					bullet.classList.add(styles.bulletEven);
+					bullet.classList.remove(styles.bulletOdd);
+				})
+			} else {
+				bullets.forEach(bullet => {
+					bullet.classList.add(styles.bulletOdd);
+					bullet.classList.remove(styles.bulletEven);
+				})
+			}
+		}
+	};
 	return (
 		<>
 			<section className={styles.section}>
 				<div className="container">
-					<div className={styles.wrap}>
+					<div className={styles.wrap} ref={paginationRef}>
 						<Swiper
+							
+							onSlideChange={onSlideChangeHandler}
 							wrapperClass={styles.swiperWrapper}
 							className={styles.swiper}
 							modules={[Navigation, Scrollbar, A11y, Pagination]}
@@ -20,7 +42,7 @@ export default function AfoamSlider() {
 							pagination={{
 								dynamicBullets: true,
 								clickable: true,
-								bulletClass: styles.bullet,
+								bulletClass: `bullet ${styles.bulletEven}`,
 								bulletActiveClass: styles.bulletActive,
 								horizontalClass: styles.paginationWrap,
 							}}

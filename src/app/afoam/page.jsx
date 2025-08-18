@@ -44,7 +44,6 @@ export default function Afoam() {
 		blocks(afoamData);
 		setContent(getAfoamContent(splitAfomData));
 	}, [afoamData]);
-
 	const recommended1 = afoamData;
 	// const recommended2 = afoamData.recommended2;
 	// const recommended3 = afoamData.recommended3;
