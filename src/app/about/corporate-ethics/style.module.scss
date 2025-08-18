@@ -1,0 +1,265 @@
+@import '../../../scss/_functions.scss';
+@import '../../../scss/_mixins.scss';
+
+.policyContent {
+	position: relative;
+	padding: 100px 0 100px 60px;
+}
+.mainTitle {
+	margin-bottom: 30px;
+	color: black;
+	font-size: 32px;
+	font-weight: 700;
+}
+.title {
+	margin-bottom: 30px;
+	color: var(--red-button);
+	font-size: 32px;
+	font-weight: 700;
+}
+
+.contentBlock {
+	margin: 100px 0;
+	position: relative;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		left: 0;
+		right: 0;
+		bottom: -50px;
+		height: 1px;
+		background-color: rgb(var(--gray-line-rgb));
+	}
+
+	&:last-child::before {
+		display: none;
+	}
+}
+
+.text {
+	margin-bottom: 40px;
+	font-size: 20px;
+	font-weight: 400;
+
+	& span {
+		font-weight: 700;
+	}
+
+	& a {
+		text-decoration: underline;
+		white-space: nowrap;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.subText {
+	margin-bottom: 10px;
+	font-size: 20px;
+	font-weight: 400;
+
+	& span {
+		font-weight: 700;
+	}
+
+	& a {
+		text-decoration: underline;
+		white-space: nowrap;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.list {
+	margin-bottom: 10px;
+	font-size: 20px;
+	list-style: disc;
+
+	& li {
+		text-indent: 35px;
+		margin-bottom: 10px;
+
+		&::marker {
+			font-size: 14px;
+		}
+	}
+}
+
+@media (max-width: 1920px) {
+	.mainTitle {
+		@include adaptive-font(32, 20);
+	}
+	.title {
+		@include adaptive-font(32, 20);
+	}
+	.subText {
+		@include adaptive-font(20, 16);
+	}
+	.text {
+		@include adaptive-font(20, 16);
+	}
+
+	.list {
+		@include adaptive-font(20, 16);
+	}
+}
+
+@media (max-width: 1440px) {
+	.policyContent {
+		padding: 80px 0 80px 50px;
+	}
+}
+
+@media (max-width: 1280px) {
+	.policyContent {
+		padding: 60px 0 60px 40px;
+	}
+
+	.contentBlock {
+		margin: 80px 0;
+
+		&::before {
+			bottom: -40px;
+		}
+	}
+
+	.list {
+		& li {
+			&::marker {
+				font-size: 12px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.title {
+		margin-bottom: 20px;
+	}
+
+	.text {
+		margin-bottom: 30px;
+	}
+
+	.policyContent {
+		padding: 50px 0 50px 30px;
+	}
+
+	.list {
+		text-indent: 10px;
+		& li {
+			text-indent: 10px;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.policyContent {
+		padding: 40px 0 40px 30px;
+	}
+	.mainTitle {
+		font-size: 24px;
+		margin-bottom: 20px;
+	}
+	.title {
+		font-size: 20px;
+	}
+
+	.text {
+		font-size: 16px;
+	}
+
+	.list {
+		font-size: 16px;
+
+		& li {
+			&::marker {
+				font-size: 8px;
+			}
+		}
+	}
+
+	.contentBlock {
+		margin: 70px 0;
+
+		&::before {
+			bottom: -35px;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.policyContent {
+		padding: 30px 10px;
+
+		&::before {
+			display: none;
+		}
+	}
+
+	.mainTitle {
+		font-size: 22px;
+	}
+	.title {
+		font-size: 18px;
+	}
+
+	.text {
+		font-size: 14px;
+	}
+
+	.list {
+		font-size: 14px;
+	}
+
+	.contentBlock {
+		margin: 60px 0;
+
+		&::before {
+			bottom: -30px;
+		}
+	}
+}
+
+@media (max-width: 375px) {
+	.title {
+		margin-bottom: 10px;
+		font-size: 16px;
+	}
+
+	.text {
+		margin-bottom: 20px;
+		font-size: 12px;
+	}
+
+	.list {
+		font-size: 12px;
+		margin-bottom: 20px;
+
+		& li {
+			margin-bottom: 20px;
+		}
+	}
+
+	.contentBlock {
+		margin: 50px 0;
+
+		&::before {
+			bottom: -25px;
+		}
+	}
+}

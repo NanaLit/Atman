@@ -1,0 +1,126 @@
+@import '@/scss/functions.scss';
+
+.section {
+	padding: 20px 0;
+	color: white;
+	min-width: 320px;
+}
+
+.wrap {
+	border-radius: 20px;
+	background: url('/about/Afoam/back-afoam.png') no-repeat center;
+	background-size: cover;
+	padding: 4vw;
+}
+
+.afoamTitle {
+	margin-bottom: 2vw;
+}
+
+.imgAfoam {
+	height: 11vw;
+	width: auto;
+}
+
+.title {
+	margin-bottom: 20px;
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 1.2;
+	span {
+		color: #e41f26;
+	}
+}
+
+.subtitle {
+	font-size: 32px;
+}
+
+.bottomSide {
+	display: flex;
+	margin-top: 3vw;
+}
+
+.linkWrap {
+	width: 25%;
+}
+
+.afoamLink {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100px;
+	max-width: 400px;
+	width: 100%;
+	background-color: var(--red-button);
+	cursor: pointer;
+	transition: 0.3s all ease-in-out;
+	border-radius: 20px;
+	&:hover {
+		background-color: var(--red-dark);
+	}
+}
+
+.law {
+	display: flex;
+	align-items: center;
+	margin-left: 4vw;
+	font-weight: 500;
+}
+
+@media (max-width: 1920px) {
+	.title {
+		font-size: calcVW(40);
+	}
+
+	.subtitle {
+		font-size: calcVW(32);
+	}
+
+	.law {
+		font-size: calcVW(20);
+	}
+}
+
+@media (max-width: 768px) {
+	.wrap {
+		border-radius: 10px;
+	}
+
+	.imgAfoam {
+		width: 100%;
+		height: auto;
+	}
+
+	.linkWrap {
+		width: 100%;
+	}
+
+	.afoamLink {
+		height: 60px;
+		font-size: 16px;
+		border-radius: 10px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		width: 100%;
+	}
+
+	.bottomSide {
+		flex-direction: column-reverse;
+		margin-top: 6px;
+	}
+
+	.title {
+		font-size: 20px;
+		margin-bottom: 6px;
+	}
+
+	.subtitle {
+		font-size: 16px;
+	}
+
+	.law {
+		font-size: 10px;
+		margin-left: 0;
+	}
+}

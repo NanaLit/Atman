@@ -1,0 +1,34 @@
+@import '@/scss/_functions.scss';
+@import '@/scss/_mixins.scss';
+
+.cards {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	row-gap: 40px;
+	column-gap: 15px;
+}
+
+// .cardContainer {
+// 	height: auto;
+// }
+
+@media (max-width: 1440px) {
+	.cards {
+		row-gap: 25px;
+		column-gap: 12px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.cards {
+		grid-template-columns: repeat(2, 1fr);
+		row-gap: 20px;
+	}
+}
+
+@media (max-width: 768px) {
+	.cards {
+		column-gap: 10px;
+	}
+}

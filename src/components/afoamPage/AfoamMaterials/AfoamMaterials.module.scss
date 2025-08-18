@@ -1,0 +1,123 @@
+@import '@/scss/_functions.scss';
+
+.br {
+	display: none;
+}
+
+.section {
+	margin: 10px 0;
+	min-width: 320px;
+}
+
+.container {
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+.wrap {
+	border-radius: 20px;
+	border: 1px solid rgb(var(--gray-line-rgb));
+	overflow: hidden;
+	background-color: rgb(var(--gray-background-img-rgb));
+}
+
+.innerAdvantages {
+	margin: 4vw;
+}
+
+.title {
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 0.9;
+	margin-bottom: 2.6vw;
+}
+
+.advantagesPoint {
+	display: flex;
+	margin: 10px 0;
+	font-size: 18px;
+	font-weight: 500;
+	&::before {
+		content: '';
+		display: block;
+		width: 8px;
+		height: 8px;
+		min-width: 8px;
+		min-height: 8px;
+		background-color: rgb(var(--red-rgb));
+		border-radius: 50%;
+		margin-right: 20px;
+		margin-top: 5px;
+	}
+}
+
+.disadvantagesPoint::before {
+	background-color: white;
+}
+
+.advantagesListItem:not(:first-child) {
+	border-top: 1px solid rgba(53, 53, 53, 0.5);
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+}
+
+@media (max-width: 1920px) {
+	.title {
+		font-size: calcVW(40);
+	}
+
+	.advantagesPoint {
+		font-size: calcVW(18);
+	}
+}
+
+@media (max-width: 1500px) {
+	.advantagesPoint {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 1280px) {
+	.container {
+		padding: 0 15px;
+	}
+}
+
+@media (max-width: 768px) {
+	.wrap {
+		border-radius: 10px;
+	}
+
+	.br {
+		display: block;
+	}
+
+	.title {
+		font-size: 24px;
+		margin-bottom: 25px;
+	}
+
+	.advantagesListItem:first-child {
+		border-top: none;
+	}
+
+	.innerAdvantages {
+		margin: 20px 15px;
+	}
+
+	.advantagesPoint {
+		&::before {
+			margin-right: 10px;
+		}
+	}
+}
+
+.grid {
+	display: grid;
+	align-items: center;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 111px;
+}

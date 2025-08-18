@@ -1,0 +1,56 @@
+@import '../../../scss/functions';
+
+.section {
+	width: 100%;
+	position: relative;
+}
+
+.wrapper {
+	overflow: hidden;
+}
+
+.swiperContainer {
+	position: relative;
+	z-index: 2;
+}
+
+.swiperSlide {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.swiper {
+	display: flex;
+}
+
+.swiperWrapper {
+	display: flex;
+	position: relative;
+}
+
+.swiperSlide img {
+	width: 100%;
+	max-height: 600px;
+
+	display: block;
+	object-fit: cover;
+}
+
+.imgWrap {
+	width: auto;
+	position: relative;
+}
+
+@media (max-width: 1024px) {
+	.section {
+		padding: 0;
+		margin-top: 50px;
+	}
+}
+
+@media (max-width: 480px) {
+	.messageContainer {
+		font-size: 14px;
+	}
+}

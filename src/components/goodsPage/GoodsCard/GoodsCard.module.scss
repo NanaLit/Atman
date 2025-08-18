@@ -1,0 +1,149 @@
+@import '@/scss/_functions.scss';
+@import '@/scss/_mixins.scss';
+
+.card {
+	padding: 40px 0 30px;
+	border-radius: 20px;
+	position: relative;
+	aspect-ratio: 410 / 520;
+	display: flex;
+	justify-content: center;
+	background-color: var(--white);
+	cursor: pointer;
+	transition: transform 0.3s ease-in-out;
+	backface-visibility: hidden;
+
+	&:hover {
+		transform: translateX(-7px) translateY(-7px);
+	}
+}
+
+.backgroundContainer {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.backgroundImage {
+	object-fit: cover;
+}
+
+.content {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	will-change: transform;
+}
+
+.title {
+	padding: 0 40px 0;
+	margin-bottom: 8px;
+	font-size: 24px;
+	font-weight: 700;
+	color: rgb(var(--foreground-rgb));
+	line-clamp: 2;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.subtitle {
+	height: 95px;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	padding: 0 40px 0;
+	font-size: 20px;
+	font-weight: 500;
+	color: rgb(var(--foreground-rgb));
+}
+
+@media (max-width: 1920px) {
+	.card {
+		padding: calcVH(40) 0 calcVH(30);
+	}
+
+	.title {
+		@include adaptive-font(24, 14);
+		padding: 0 calcVW(40) 0;
+	}
+
+	.subtitle {
+		@include adaptive-font(20, 12);
+		padding: 0 calcVW(40) 0;
+	}
+}
+
+@media (max-width: 1440px) {
+	.card {
+		padding: calcVH(30) 0 calcVH(30);
+	}
+
+	.title,
+	.subtitle {
+		padding: 0 calcVW(30) 0;
+	}
+}
+
+@media (max-width: 1280px) {
+	.card {
+		border-radius: 15px;
+		padding: 20px 0;
+	}
+}
+
+@media (max-width: 1024px) {
+	.subtitle {
+		height: 70px;
+	}
+	.card {
+		padding: 20px 0;
+
+		&:hover {
+			transform: none;
+		}
+	}
+
+	.title,
+	.subtitle {
+		padding: 0 20px 0;
+	}
+}
+
+@media (max-width: 800px) {
+	.subtitle {
+		height: 55px;
+	}
+}
+
+@media (max-width: 480px) {
+	.subtitle {
+		height: 50px;
+	}
+	.card {
+		padding: 10px 0 10px;
+		border-radius: 10px;
+	}
+
+	.title,
+	.subtitle {
+		padding: 0 10px 0;
+	}
+}
+
+@media (max-width: 425px) {
+	.subtitle {
+		height: 45px;
+	}
+}
+
+@media (max-width: 375px) {
+	.title {
+		font-size: 10px;
+	}
+
+	.subtitle {
+		font-size: 8px;
+	}
+}

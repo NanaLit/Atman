@@ -1,0 +1,141 @@
+@import '@/scss/_functions.scss';
+
+.section {
+	padding: 20px;
+	border-bottom: 1px solid rgb(var(--gray-line-rgb));
+	overflow: clip;
+}
+
+.container {
+	margin: 0 auto;
+}
+
+.wrap {
+	margin: 120px 100px 120px 100px;
+}
+
+.section .swiper {
+	width: 100%;
+	display: flex;
+	overflow: visible;
+}
+
+.swiperWrapper {
+	display: flex;
+	align-items: stretch;
+}
+
+.title {
+	font-size: 96px;
+	font-weight: 700;
+	line-height: 1;
+	margin-bottom: 5vw;
+
+	& span {
+		color: var(--red-button);
+	}
+}
+
+.swiperSlide {
+	position: relative;
+	border-radius: 20px;
+	border: 1px solid rgb(var(--foreground-rgb));
+	display: flex;
+	flex-direction: column;
+	height: auto;
+}
+
+.slideInner {
+	height: 100%;
+	margin: 0 2.5vw;
+	padding-bottom: 2.5vw;
+}
+
+.imgContainer {
+	height: 14vw;
+	display: flex;
+	align-items: center;
+	padding-top: 15px;
+}
+
+.logo {
+	object-fit: contain;
+	max-height: 90%;
+}
+
+.titleCard {
+	font-size: 32px;
+	font-weight: 700;
+	line-height: 1;
+	margin-bottom: 1.2vw;
+}
+
+@media (max-width: 1920px) {
+	.title {
+		font-size: calcVW(96);
+	}
+
+	.titleCard {
+		font-size: calcVW(32);
+	}
+
+	.description {
+		font-size: calcVW(20);
+	}
+	.wrap {
+		margin: 6vw 5vw 5vw 5vw;
+	}
+}
+
+@media (max-width: 1024px) {
+	.title {
+		font-size: 36px;
+	}
+
+	.titleCard {
+		font-size: 16px;
+	}
+
+	.description {
+		font-size: 10px;
+	}
+}
+
+@media (max-width: 768px) {
+	.section {
+		padding: 0;
+	}
+
+	.wrap {
+		margin: 30px 10px 30px 10px;
+	}
+
+	.title {
+		margin-bottom: 30px;
+	}
+
+	.titleCard {
+		margin-bottom: 10px;
+	}
+}
+
+@media (max-width: 576px) {
+	.section {
+		padding: 0;
+	}
+
+	.wrap {
+		margin: 30px 10px 30px 10px;
+	}
+
+	.title {
+		margin-bottom: 30px;
+	}
+
+	.titleCard {
+		margin-bottom: 10px;
+	}
+	.imgContainer {
+		margin-bottom: 30px;
+	}
+}

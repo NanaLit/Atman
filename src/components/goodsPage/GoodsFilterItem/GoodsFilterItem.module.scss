@@ -1,0 +1,93 @@
+@import '../../../scss/_functions.scss';
+@import '../../../scss/_mixins.scss';
+
+.item {
+	min-height: 45px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	position: relative;
+
+	& input {
+		position: absolute;
+		opacity: 0;
+
+		&:checked + label::before {
+			background-color: var(--red-button);
+			border: none;
+		}
+
+		&:checked + label::after {
+			opacity: 1;
+			transform: translateY(-50%) scale(1);
+		}
+	}
+
+	& label {
+		padding-left: 55px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		position: relative;
+		font-size: 20px;
+		font-weight: 500;
+		line-height: 120%;
+		cursor: pointer;
+
+		& span {
+			font-size: 20px;
+			font-weight: 300;
+		}
+
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 5;
+			width: 40px;
+			height: 40px;
+			border-radius: 10px;
+			border: 1px solid rgb(var(--gray-line-rgb));
+			background-color: transparent;
+			transition: background-color 0.3s, border 0.3s;
+		}
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 10px;
+			top: 50%;
+			transform: translateY(-50%) scale(0);
+			z-index: 10;
+			width: 20px;
+			height: 20px;
+			background: url('../../../../public/check.svg') no-repeat center;
+			background-size: 20px 20px;
+			opacity: 0;
+			transition: opacity 0.3s, transform 0.3s;
+		}
+	}
+}
+
+@media (max-width: 1920px) {
+	.item {
+		& label {
+			@include adaptive-font(20, 12);
+		}
+	}
+}
+@media (max-width: 1024px) {
+	.item {
+		& label {
+			font-size: 14px;
+
+			& span {
+				font-size: 12px;
+			}
+		}
+	}
+}

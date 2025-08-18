@@ -1,0 +1,164 @@
+@import '@/scss/_functions.scss';
+@import '@/scss/_mixins.scss';
+
+.filterPanel {
+	width: 415px;
+	height: max-content;
+	padding: 50px;
+	background-color: var(--white);
+	border-radius: 20px;
+}
+
+.filters {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding-bottom: 50px;
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 1px;
+		background-color: rgb(var(--foreground-rgb));
+		opacity: 0.2;
+	}
+}
+
+.buttons {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.buttonApply,
+.buttonReset {
+	width: 314px;
+	height: 60px;
+	border-radius: 10px;
+	font-size: 20px;
+	font-weight: 500;
+}
+
+.buttonReset {
+	border: 1px solid rgb(var(--foreground-rgb));
+	color: var(--gray-background-img-rgb);
+	background-color: transparent;
+
+	@media (hover: hover) {
+		&:hover {
+			background-color: rgb(var(--foreground-rgb));
+			color: var(--white);
+		}
+	}
+
+	@media (hover: none) {
+		&:active {
+			background-color: rgb(var(--foreground-rgb));
+			color: var(--white);
+		}
+	}
+}
+
+.hiddenMenu {
+	opacity: 0;
+	z-index: -1;
+	user-select: none;
+	pointer-events: none;
+	transition: all 0.3s ease-in-out;
+}
+
+.visibleMenu {
+	opacity: 1;
+	z-index: 1;
+	user-select: auto;
+	pointer-events: auto;
+	transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 1920px) {
+	.filters {
+		padding-bottom: calcVH(50);
+	}
+
+	.buttons {
+		margin-top: calcVH(50);
+	}
+}
+
+@media (max-width: 1280px) {
+	.filterPanel {
+		width: 370px;
+		padding: 30px;
+	}
+
+	.filters {
+		gap: 10px;
+	}
+
+	.buttons {
+		align-items: center;
+	}
+
+	.buttonApply,
+	.buttonReset {
+		width: 280px;
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.filters {
+		padding-bottom: calcVH(25);
+	}
+
+	.buttons {
+		margin-top: calcVH(25);
+	}
+}
+
+@media (max-width: 820px) {
+	.buttonApply,
+	.buttonReset {
+		width: 240px;
+	}
+
+	.filterPanel {
+		padding: 25px;
+	}
+}
+
+@media (max-width: 800px) {
+	.filterPanel {
+		width: 100%;
+		padding: 80px 15px 15px;
+		border: 1px solid rgb(var(--gray-line-rgb));
+		border-radius: 10px;
+		position: absolute;
+		z-index: 1;
+	}
+
+	.filters {
+		padding-bottom: 20px;
+	}
+
+	.buttons {
+		align-items: center;
+		margin-top: 20px;
+	}
+}
+
+@media (max-width: 375px) {
+	.filterPanel {
+		padding: 80px 10px 10px;
+	}
+
+	.buttonApply,
+	.buttonReset {
+		width: 100%;
+	}
+}

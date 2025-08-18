@@ -1,0 +1,173 @@
+@import '@/scss/_functions.scss';
+
+.imgAfoamMobile {
+	display: none;
+}
+
+.section .swiper .paginationWrap {
+	left: 2.6vw;
+	bottom: 2.6vw;
+	display: flex;
+	align-items: center;
+	transform: none;
+}
+
+.bullet {
+	background: white;
+	opacity: 50%;
+	display: block;
+	border-radius: 50%;
+	margin-right: 15px;
+	width: 15px;
+	height: 15px;
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+}
+
+.bulletActive {
+	width: 20px;
+	height: 20px;
+	opacity: 100%;
+}
+
+.section {
+	min-width: 320px;
+	padding: 20px 0;
+	border-bottom: 1px solid #bcbcbc;
+}
+
+.swiper {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	position: relative;
+	overflow: hidden;
+}
+
+.swiperWrapper {
+	display: flex;
+}
+
+.swiperSlideOne {
+	background: url('/afoam/afoamslide1.png') center no-repeat;
+}
+
+.swiperSlideTwo {
+	background: url('/afoam/afoamSlide2.png') center no-repeat;
+}
+
+.innerWrap {
+	margin: 9.6vw 2.6vw;
+}
+
+.swiperSlideOne,
+.swiperSlideTwo {
+	display: flex;
+	background-size: cover;
+	background-position: center;
+	max-height: 560px;
+	border-radius: 20px;
+}
+
+.imgAfoam,
+.imgAfoamMobile {
+	height: 5vw;
+	width: auto;
+	max-height: 96px;
+	min-height: 53px;
+}
+
+.subTitle {
+	font-size: 32px;
+	font-weight: 500;
+	line-height: 1.2;
+	margin-top: 2.6vw;
+}
+
+.swiperSlideOne .subTitle {
+	color: white;
+	span {
+		color: var(--red-button);
+	}
+}
+
+.swiperSlideTwo .subTitle {
+	color: white;
+
+	span {
+		color: var(--red-button);
+	}
+}
+
+@media (max-width: 1920px) {
+	.subTitle {
+		font-size: calcVW(32);
+	}
+}
+
+@media (max-width: 1024px) {
+	.bullet {
+		width: 10px;
+		height: 10px;
+		margin-right: 10px;
+	}
+
+	.bulletActive {
+		width: 14px;
+		height: 14px;
+	}
+}
+
+@media (max-width: 768px) {
+	.section .swiper .paginationWrap {
+		left: 50%;
+		transform: translate(-50%);
+		justify-content: center;
+	}
+
+	.subTitle {
+		font-size: 18px;
+		margin-top: 15px;
+	}
+
+	.swiperSlideOne,
+	.swiperSlideTwo {
+		border-radius: 10px;
+	}
+
+	.swiperSlideTwo .subTitle {
+		color: white;
+	}
+}
+
+@media (max-width: 576px) {
+	.section .swiper .paginationWrap {
+		bottom: 20px;
+	}
+
+	.swiperSlideOne,
+	.swiperSlideTwo {
+		max-height: 250px;
+	}
+
+	.innerWrap {
+		margin: 30px 15px 130px 15px;
+	}
+
+	.imgAfoamMobile {
+		display: block;
+	}
+
+	.swiperSlideOne {
+		background: url('/afoam/afoamslideMobile1.png') center no-repeat;
+		background-size: cover;
+	}
+
+	.swiperSlideTwo {
+		background: url('/afoam/afoamslideMobile2.png') center no-repeat;
+		background-size: cover;
+		& .imgAfoam {
+			display: none;
+		}
+	}
+}

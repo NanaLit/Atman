@@ -1,0 +1,56 @@
+.accordionItem {
+	padding-bottom: 30px;
+}
+
+.accordionHeader {
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	background-color: transparent;
+	border: 0;
+	font-size: 20px;
+	font-weight: 500;
+	text-align: left;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	color: inherit;
+	&.active {
+		color: var(--red-button);
+		margin-bottom: 10px;
+	}
+}
+
+.accordionCollapse {
+	height: 0;
+	overflow: hidden;
+	transition: height 0.3s;
+
+	&.open {
+		height: auto;
+	}
+}
+
+.accordionBody {
+	margin-left: 10px;
+	padding-left: 10px;
+	border-left: 1px solid var(--red);
+	font-size: 14px;
+	font-weight: 400;
+
+	& ul {
+		& li {
+			margin-bottom: 15px;
+		}
+	}
+}
+
+.buttonLinkActive {
+	color: var(--red-button);
+	// color: red;
+}
+
+.linkActive {
+	color: var(--red-button);
+	// color: red;
+}
