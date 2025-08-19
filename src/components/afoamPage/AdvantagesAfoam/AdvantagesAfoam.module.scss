@@ -35,7 +35,7 @@
 .advantagesPoint {
 	display: flex;
 	margin: 10px 0;
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: 500;
 	&::before {
 		content: '';
@@ -73,16 +73,6 @@
 @media (max-width: 1920px) {
 	.title {
 		font-size: calcVW(40);
-	}
-
-	.advantagesPoint {
-		font-size: calcVW(18);
-	}
-}
-
-@media (max-width: 1500px) {
-	.advantagesPoint {
-		font-size: 14px;
 	}
 }
 

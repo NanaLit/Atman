@@ -16,6 +16,7 @@ export default function Certificates() {
 		try {
 			const response = await axios.get(`${process.env.HOST}/api/sertificate`);
 			setCertificatesData(response.data);
+			console.log(response.data)
 		} catch (err) {
 			setError(err.message);
 		}
@@ -43,6 +44,8 @@ export default function Certificates() {
 								className={styles.swiper}
 								modules={[Navigation, Scrollbar, A11y]}
 								spaceBetween={20}
+								freeMode= {true}
+								slidesPerView="auto" 
 								breakpoints={{
 									0: {
 										slidesPerView: 1,
@@ -69,7 +72,7 @@ export default function Certificates() {
 										spaceBetween: 20,
 									},
 									1920: {
-										slidesPerView: certificatesData.length,
+										slidesPerView: "auto",
 										spaceBetween: 20,
 									},
 								}}
@@ -78,13 +81,13 @@ export default function Certificates() {
 									<SwiperSlide
 										key={index}
 										className={styles.swiperSlide}
-										style={{ width: item.type === 'album' ? 525 : 270 }}
+										style={{ width: item.type == 'album' ? 384 : 270 }}
 									>
 										<Image
 											className={styles.cert}
 											src={`${process.env.HOST}/${item.imagesrc}`}
 											alt="certificate"
-											width={item.type === 'album' ? 525 : 270}
+											width={item.type == 'album' ? 384 : 270}
 											height={384}
 											// priority={true}
 										/>

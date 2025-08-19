@@ -54,7 +54,8 @@
 	border-radius: 20px;
 	max-height: 384px;
 	min-height: 284px;
-	max-width: 280px;
+	width: auto; 
+	align-self: center;
 	filter: grayscale(100%);
 	user-select: none;
 }

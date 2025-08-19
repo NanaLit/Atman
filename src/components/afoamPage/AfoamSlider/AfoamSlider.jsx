@@ -33,7 +33,7 @@ export default function AfoamSlider() {
 					<div className={styles.wrap} ref={paginationRef}>
 						<Swiper
 							
-							onSlideChange={onSlideChangeHandler}
+							// onSlideChange={onSlideChangeHandler}
 							wrapperClass={styles.swiperWrapper}
 							className={styles.swiper}
 							modules={[Navigation, Scrollbar, A11y, Pagination]}

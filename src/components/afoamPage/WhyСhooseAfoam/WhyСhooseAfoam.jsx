@@ -74,11 +74,11 @@ export const WhyСhooseAfoam = () => {
 								</div>
 							</li>
 						</ul>
-						<span className={styles.desc}>
+						{/* <span className={styles.desc}>
 							Продукция AFOAM представлена не только в промышленном сегменте, но
 							и в розничной продаже <br /> — для небольших производств и частных
 							потребителей.
-						</span>
+						</span> */}
 					</div>
 				</div>
 			</div>
